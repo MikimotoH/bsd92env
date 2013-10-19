@@ -39,6 +39,11 @@ ln -sf `readlink -f .vim` ~/
 ln -sf `readlink -f .zshrc` ~/
 ln -sf `readlink -f .hgrc`  ~/
 
+# git config initialize 
+git config --global user.name MikimotoH
+git config --global user.email mikimotoh@gmail.com
+git config --global credential.helper "cache --timeout=`bc<<<3600*24*365`"
+
 # Install VIM pathogen -- bundle manager
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl 'www.vim.org/scripts/download_script.php?src_id=19375' \

@@ -19,3 +19,9 @@ export C_INCLUDE_PATH=':/usr/include'
 
 mv ~/ycm_temp/llvm_root_dir/lib/libclang.so /usr/local/lib/
 
+mv ~/ycm_temp/llvm_root_dir/* ~/clang+llvm-3.3-amd64-freebsd9/
+
+rm -rf ~/ycm_temp
+
+rm -rf ~/ycm_build 
+cp .ycm_extra_conf.py /

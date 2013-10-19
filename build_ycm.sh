@@ -25,3 +25,5 @@ rm -rf ~/ycm_temp
 
 rm -rf ~/ycm_build 
 cp .ycm_extra_conf.py /
+
+(cd ~/YouCompleteMe && git submodule update --init --recursive )

@@ -69,7 +69,7 @@ command! -bar Hexmode call ToggleHex()
 
 " Alt-L to reload tags
 " map <C-[>l 
-map <C-L> :!exctags -R --c-kinds=+p --c-types=+p --fields=+S  --links=no --sort=foldcase . <CR><CR>
+nnoremap <C-L> :!exctags -R --c-kinds=+p --c-types=+p --fields=+S  --links=no --sort=foldcase . <CR>
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " helper function to toggle hex mode

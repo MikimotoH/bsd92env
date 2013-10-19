@@ -95,4 +95,4 @@ fi
 
 
 vim -c "helptags ~/.vim/bundle/nerdtree/doc/" -c "helptags ~/.vim/bundle/tagbar/doc/" -c q
-rm ~/bsdenv/root
+(cd ~/bsd92env && rm root)

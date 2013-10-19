@@ -12,4 +12,4 @@
     && make -j `sysctl -n kern.smp.cpus` VIMRUNTIMEDIR=/usr/share/vim/vim74 \
     && make install 
 )
-
+[[ "$(vim --version | head -n 1 | awk '{print $5}')" == "7.4" ]] || mv `which vim` $(dirname $(which vim))/vim-old

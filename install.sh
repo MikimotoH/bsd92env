@@ -7,19 +7,15 @@ export PACKAGESITE=http://freebsd.ntu.edu.tw/FreeBSD/ports/amd64/packages-9.2-re
 [[ -d ~/.oh-my-zsh ]] || \
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
+pkg_add -r vim
 pkg_add -r wget
 pkg_add -r mercurial
-pkg_add -r vim
+# python package manager
+pkg_add -r py27-pip
 
 # ag (faster than ack)
 pkg_add -r the_silver_searcher
-
-if hash ack 2>/dev/null ; then
-    echo "ack already installed"
-else
-    echo "Install ack"
-    curl "http://beyondgrep.com/ack-2.04-single-file" > /usr/local/bin/ack && chmod 0755 /usr/local/bin/ack
-fi
+pkg_add -r ack
 
 
 cp ./rkj-repos.zsh-theme ~/.oh-my-zsh/themes
@@ -78,15 +74,8 @@ else
         git clone git://github.com/majutsushi/tagbar)
 fi
 
-if [ -f ~/.vim/plugin/ack.vim ]; then
-    echo "ack.vim is already installed"
-else
-    echo "Install ack.vim"
-    ( cd ~/.vim && curl -Sso ack.tar.gz \
-        "http://www.vim.org/scripts/download_script.php?src_id=10433" \
-        && tar zxvf ack.tar.gz && rm ack.tar.gz )
-fi
-
+[[ -f ~/.vim/plugin/ack.vim ]] || \
+    curl -L "www.vim.org/scripts/download_script.php?src_id=10433" | tar zxvf - -C ~/.vim
 
 if [ -d ~/.vim/doc ] ; then
     if [ "$(ls -A ~/.vim/doc )" ]; then 

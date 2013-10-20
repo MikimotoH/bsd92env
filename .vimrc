@@ -189,3 +189,7 @@ let g:AutoComplPop_CompleteoptPreview = 1
 
 " YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
+
+" Use Ag the_silver_searcher instead of ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+

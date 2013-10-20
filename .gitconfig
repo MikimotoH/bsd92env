@@ -18,3 +18,7 @@ lg = !"git lg1"
 	editor = vim
 [merge]
 	tool = vimdiff
+[color]
+	ui = true
+[color "diff"]
+	meta = blue black bold

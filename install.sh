@@ -11,6 +11,9 @@ pkg_add -r wget
 pkg_add -r mercurial
 pkg_add -r vim
 
+# ag (faster than ack)
+pkg_add -r the_silver_searcher
+
 if hash ack 2>/dev/null ; then
     echo "ack already installed"
 else
@@ -43,6 +46,7 @@ ln -sf `readlink -f .hgrc`  ~/
 git config --global user.name MikimotoH
 git config --global user.email mikimotoh@gmail.com
 git config --global credential.helper "cache --timeout=`bc<<<3600*24*365`"
+git config --global color.ui true
 
 # Install VIM pathogen -- bundle manager
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \

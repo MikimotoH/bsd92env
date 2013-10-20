@@ -77,6 +77,9 @@ fi
 [[ -f ~/.vim/plugin/ack.vim ]] || \
     curl -L "www.vim.org/scripts/download_script.php?src_id=10433" | tar zxvf - -C ~/.vim
 
+mkdir -p ~/.vim/plugin
+curl -L "www.vim.org/scripts/download_script.php?src_id=16171" > ~/.vim/plugin/DirDiff.vim
+
 if [ -d ~/.vim/doc ] ; then
     if [ "$(ls -A ~/.vim/doc )" ]; then 
         print  "~/.vim/doc not empty" 

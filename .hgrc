@@ -5,7 +5,7 @@ ssh = ssh -C
 [extensions]
 graphlog = 
 hgext.extdiff =
-prompt = /root/hg-prompt/prompt.py
+prompt = ~/hg-prompt/prompt.py
 color =
 
 [ui]
@@ -18,9 +18,9 @@ vimdiff.args = -d $base $local $output $other +close +close
 
 [alias]
 log = log -r :
-slog = log -r : --style=/root/mercurial-cli-templates/map-cmdline.slog
-nlog = log -r : --style=/root/mercurial-cli-templates/map-cmdline.nlog
-sglog = glog --style=/root/mercurial-cli-templates/map-cmdline.sglog
+slog = log -r : --style=~/mercurial-cli-templates/map-cmdline.slog
+nlog = log -r : --style=~/mercurial-cli-templates/map-cmdline.nlog
+sglog = glog --style=~/mercurial-cli-templates/map-cmdline.sglog
 
 [defaults]
 # suppress noisy extdiff header message

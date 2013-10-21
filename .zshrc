@@ -86,8 +86,14 @@ alias hgdi='hg diff -bBw'
 alias hgsg='hg sglog|head -43'
 alias md='mkdir -p'
 alias find_largest_dir='du -sx * |sort  -k1 -n -r|head'
-# 131 is mercurial, 200 is mbp, 57 is ETToday channel, -f is background, -N is do NOT execute remote command
-alias gopicor="ssh -f -N -L localhost:57131:192.168.1.131:22 -L localhost:57200:192.168.1.200:22 picoral@picoral.dyns.cx"
+# 57=ETTodayMoney
+# mercurial=131
+# bench=95, kitty=45
+# miki-bsd9=200, mbp=143
+# reef=124,toaster=21
+# pt-12k=147, hp1=130, rb=99
+# -f is background, -N is do NOT execute remote command
+alias gopizza='ssh -L localhost:57131:192.168.1.131:22 -L localhost:57095:192.168.1.95:22 -L localhost:57045:192.168.1.45:22 -L localhost:57200:192.168.1.200:22 -L          localhost:57143:192.168.1.143:22 -L localhost:57124:192.168.1.124:22 -L localhost:57021:192.168.1.21:22 -L localhost:57147:192.168.1.147:22 -L localhost:57130:192.168.1.130:22 -L localhost:57099:192.168.1.99:22 picoral@picoral.dyns.cx'
 
 export TERM=xterm-256color
 export PACKAGESITE=http://freebsd.ntu.edu.tw/FreeBSD/ports/amd64/packages-9.2-release/Latest/

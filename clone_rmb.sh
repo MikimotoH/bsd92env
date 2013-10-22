@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 rmb=root@miki-bsd9
+scp -C $rmb:/usr/sbin/pkg_add /usr/sbin/pkg_add
+scp -C $rmb:/usr/sbin/pkg_info /usr/sbin/pkg_info
+
 mkdir -p /usr/local/lib/perl5/5.14.2/mach/CORE
 for i in /usr/local/bin/vim /usr/local/lib/libSM.so.6 /usr/local/lib/libICE.so.6 /usr/local/lib/libXt.so.6 /usr/local/lib/libX11.so.6 /usr/local/lib/libiconv.so.3 /usr/local/lib/libintl.so.9 /usr/local/lib/perl5/5.14.2/mach/CORE/libperl.so /usr/local/lib/libpython2.7.so /usr/local/lib/libruby18.so.18 /usr/local/lib/libxcb.so.2 /usr/local/lib/libXau.so.6 /usr/local/lib/libXdmcp.so.6 /usr/local/lib/libpthread-stubs.so.0 ; do scp -C $rmb:$i $i ; done
 

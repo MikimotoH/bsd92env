@@ -3,6 +3,12 @@ export CC=gcc
 export CXX=g++
 export C_INCLUDE_PATH=':/usr/include'
 
+hash gcc || pkg_add -r gcc
+rehash
+hash gcc || export CC=$(ls /usr/local/bin/gcc* | head -n 1 )
+hash g++ || export CXX=$(ls /usr/local/bin/g++* | head -n 1 )
+
+
 (cd ~ \
     && pkg_add -r cmake \
     && git clone https://github.com/Valloric/YouCompleteMe.git \

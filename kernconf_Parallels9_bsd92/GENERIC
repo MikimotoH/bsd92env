@@ -74,7 +74,8 @@ options 	DDB_CTF			# kernel ELF linker loads CTF data
 options         DDB
 options         GDB
 options         BREAK_TO_DEBUGGER
-options         KDB_UNATTENDED
+options         KDB_UNATTENDED #http://www.freebsd.org/doc/en/books/developers-handbook/kerneldebug-online-ddb.html
+options         GEOM_JOURNAL  #http://www.freebsd.org/doc/handbook/geom-gjournal.html
 
 # Make an SMP-capable kernel by default
 options 	SMP			# Symmetric MultiProcessor Kernel

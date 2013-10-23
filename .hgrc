@@ -18,9 +18,9 @@ vimdiff.args = -d $base $local $output $other +close +close
 
 [alias]
 log = log -r :
-slog = log -r : --style=~/mercurial-cli-templates/map-cmdline.slog
-nlog = log -r : --style=~/mercurial-cli-templates/map-cmdline.nlog
-sglog = glog --style=~/mercurial-cli-templates/map-cmdline.sglog
+slog = log -r : --style=$HOME/mercurial-cli-templates/map-cmdline.slog
+nlog = log -r : --style=$HOME/mercurial-cli-templates/map-cmdline.nlog
+sglog = glog --style=$HOME/mercurial-cli-templates/map-cmdline.sglog
 
 [defaults]
 # suppress noisy extdiff header message

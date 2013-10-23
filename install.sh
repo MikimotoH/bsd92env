@@ -74,11 +74,15 @@ else
         git clone git://github.com/majutsushi/tagbar)
 fi
 
-[[ -f ~/.vim/plugin/ack.vim ]] || \
-    curl -L "www.vim.org/scripts/download_script.php?src_id=10433" | tar zxvf - -C ~/.vim
+# [[ -f ~/.vim/plugin/ack.vim ]] || curl -L "www.vim.org/scripts/download_script.php?src_id=10433" | tar zxvf - -C ~/.vim
 
-mkdir -p ~/.vim/plugin
-curl -L "www.vim.org/scripts/download_script.php?src_id=16171" > ~/.vim/plugin/DirDiff.vim
+mkdir -p ~/.vim/plugin && \
+    curl -L "www.vim.org/scripts/download_script.php?src_id=16171" > ~/.vim/plugin/DirDiff.vim
+
+# install Ag
+( git clone https://github.com/rking/ag.vim ~/.vim/bundle/ag &&\
+    vim ~/.vim/bundle/ag/doc -c "helptags ." -c "q")
+echo "tags" >> ~/.agignore
 
 if [ -d ~/.vim/doc ] ; then
     if [ "$(ls -A ~/.vim/doc )" ]; then 

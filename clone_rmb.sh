@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
-rmb=root@miki-bsd9
+rmb=root@bsd92host
 scp -C $rmb:/usr/sbin/pkg_add /usr/sbin/pkg_add
 scp -C $rmb:/usr/sbin/pkg_info /usr/sbin/pkg_info
 
-mkdir -p /usr/local/lib/perl5/5.14.2/mach/CORE
-for i in /usr/local/bin/vim /usr/local/lib/libSM.so.6 /usr/local/lib/libICE.so.6 /usr/local/lib/libXt.so.6 /usr/local/lib/libX11.so.6 /usr/local/lib/libiconv.so.3 /usr/local/lib/libintl.so.9 /usr/local/lib/perl5/5.14.2/mach/CORE/libperl.so /usr/local/lib/libpython2.7.so /usr/local/lib/libruby18.so.18 /usr/local/lib/libxcb.so.2 /usr/local/lib/libXau.so.6 /usr/local/lib/libXdmcp.so.6 /usr/local/lib/libpthread-stubs.so.0 ; do scp -C $rmb:$i $i ; done
+mkdir -p /usr/local/lib/perl5/5.14/mach/CORE
+for i in /usr/local/bin/vim /lib/libm.so.5 /lib/libncurses.so.8 /usr/local/lib/libiconv.so.3 /usr/local/lib/libintl.so.9 /usr/local/lib/perl5/5.14/mach/CORE/libperl.so /usr/local/lib/libpython2.7.so /usr/local/lib/libtcl86.so.1 /lib/libthr.so.3 /usr/local/lib/libruby19.so.19  /lib/libc.so.7 /lib/libcrypt.so.5 /lib/libutil.so.9 /lib/libz.so.6 /usr/local/lib/libexecinfo.so.1 ; do scp -C $rmb:$i $i ; done
 
 scp -Cr $rmb:/usr/local/lib/python2.7 /usr/local/lib
 mkdir -p /usr/share/vim/vim74

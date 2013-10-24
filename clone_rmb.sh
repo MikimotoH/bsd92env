@@ -3,8 +3,9 @@ rmb=root@bsd92host
 scp -C $rmb:/usr/sbin/pkg_add /usr/sbin/pkg_add
 scp -C $rmb:/usr/sbin/pkg_info /usr/sbin/pkg_info
 
+scp -Cr $rmb:~/.vim ~/
 mkdir -p /usr/local/lib/perl5/5.14/mach/CORE
-for i in /usr/local/bin/vim /lib/libm.so.5 /lib/libncurses.so.8 /usr/local/lib/libiconv.so.3 /usr/local/lib/libintl.so.9 /usr/local/lib/perl5/5.14/mach/CORE/libperl.so /usr/local/lib/libpython2.7.so /usr/local/lib/libtcl86.so.1 /lib/libthr.so.3 /usr/local/lib/libruby19.so.19  /lib/libc.so.7 /lib/libcrypt.so.5 /lib/libutil.so.9 /lib/libz.so.6 /usr/local/lib/libexecinfo.so.1 ; do scp -C $rmb:$i $i ; done
+for i in /usr/local/bin/vim /usr/local/lib/libiconv.so.3 /usr/local/lib/libintl.so.9 /usr/local/lib/perl5/5.14/mach/CORE/libperl.so /usr/local/lib/libpython2.7.so /usr/local/lib/libtcl86.so.1 /usr/local/lib/libruby19.so.19 /usr/local/lib/libexecinfo.so.1 ; do scp -C $rmb:$i $i ; done
 
 scp -Cr $rmb:/usr/local/lib/python2.7 /usr/local/lib
 mkdir -p /usr/share/vim/vim74
@@ -13,7 +14,6 @@ scp /usr/share/vim/vim74/syntax/syntax.vim
 ln -sf /usr/share/vim/vim74 /usr/local/share/vim/vim74
 ln -sf ~/.vim/bundle/YouCompleteMe/python/libclang.so /usr/local/lib/libclang.so
 scp -C $rmb:/usr/local/lib/libc++.so.1 /usr/local/lib/libc++.so.1
-scp -Cr $rmb:~/.vim ~/
 scp -C $rmb:~/.vimrc ~/
 scp -C $rmb:~/.ycm_extra_conf.py ~/
 

@@ -22,10 +22,8 @@ scp -C $rmb:~/.hgrc ~/
 scp -Cr $rmb:~/hg-prompt ~/
 scp -Cr $rmb:~/mercurial-cli-templates ~/
 # zsh
+scp -Cr $rmb:~/.oh-my-zsh ~/
 scp -C $rmb:~/.zshrc ~/
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
-scp -C $rmb:~/.oh-my-zsh/themes/rkj-repos.zsh-theme ~/.oh-my-zsh/themes/rkj-repos.zsh-theme
 
 # vim utilities
 scp -C $rmb:/usr/local/bin/exctags /usr/local/bin/exctags

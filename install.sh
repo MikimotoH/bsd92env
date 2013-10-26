@@ -100,4 +100,10 @@ fi
 
 
 vim -c "helptags ~/.vim/bundle/nerdtree/doc/" -c "helptags ~/.vim/bundle/tagbar/doc/" -c q
+
+# cc_args.py was copied from clang_complete
+mkdir -p ~/.vim/bin && \
+    cp ~/bsd92env/cc_args.py ~/.vim/bin
+
+
 (cd ~/bsd92env && rm root)

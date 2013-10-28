@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 rmb=root@bsd92host
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 scp -C $rmb:/usr/sbin/pkg_add /usr/sbin/pkg_add
 scp -C $rmb:/usr/sbin/pkg_info /usr/sbin/pkg_info
 

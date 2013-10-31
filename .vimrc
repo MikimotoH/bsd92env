@@ -143,8 +143,7 @@ set wildmode=longest,list:longest
 set wildmode=longest,list,full
 set wildmenu
 
-set tags+=/usr/src/sys/amd64/include/tags,/usr/src/sys/x86/include/tags,/usr/src/sys/tags,/usr/include/tags   
-" ,./tags,tags;
+set tags+=/usr/src/sys/amd64/include/tags,/usr/src/sys/x86/include/tags,/usr/src/sys/tags,/usr/include/tags,/usr/include/sys/tags,./tags,tags;
 
 " Tip 1235
 " Use embedded Python Calculator

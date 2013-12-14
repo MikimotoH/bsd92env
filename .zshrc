@@ -113,5 +113,5 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # Use VIM as man page viewer
 # http://ebergen.net/wordpress/2009/06/04/using-vim-as-a-man-page-viewer/
 export MANPAGER="col -b | vim -c 'set ft=man nomod nolist' -"
-kenv pi.max_bplm_emulator_memory=1
+kenv pi.max_bplm_emulator_memory=128
 kenv hw.uart.dbgport="mm:0xf1012100,br:115200"

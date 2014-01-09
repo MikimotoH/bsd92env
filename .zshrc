@@ -112,6 +112,8 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # Use VIM as man page viewer
 # http://ebergen.net/wordpress/2009/06/04/using-vim-as-a-man-page-viewer/
-export MANPAGER="col -b | vim -c 'set ft=man nomod nolist' -"
-kenv pi.max_bplm_emulator_memory=128
-kenv hw.uart.dbgport="mm:0xf1012100,br:115200"
+export EDITOR=vim
+export PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
+    vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+    -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
+    -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\""

@@ -8,6 +8,18 @@ hgext.extdiff =
 prompt = ~/hg-prompt/prompt.py
 color =
 mq=
+rebase =
+reviewboard = /root/hgreviewboard/
+
+[reviewboard]
+# REQUIRED ITEMS:
+server          = reviews.pi-coral.com
+
+# OPTIONAL ITEMS:
+user            = miki.liu
+password        = Pi-Coral@Taiwan2013
+# target_groups   = ... # default review groups
+# target_people   = ... # default review people
 
 [ui]
 merge = vimdiff

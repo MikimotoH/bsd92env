@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="rkj-repos"
+ZSH_THEME="rkj"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -71,7 +71,6 @@ elif [[ $toolchain == 'gcc49' ]]; then
 fi
 
 #My Alias
-alias gombp='ssh -p 2624 root@192.168.1.200'
 alias cmsg='echo /dev/null > /var/log/messages'
 alias vmsg='vim /var/log/messages'
 alias tmsg='tail -f /var/log/messages'
@@ -86,14 +85,6 @@ alias hgdi='hg diff -bBw'
 alias hgsg='hg sglog|head -43'
 alias md='mkdir -p'
 alias find_largest_dir='du -sx * |sort  -k1 -n -r|head'
-# 57=ETTodayMoney
-# mercurial=131
-# bench=95, kitty=45
-# miki-bsd9=200, mbp=143
-# reef=124,toaster=21
-# pt-12k=147, hp1=130, rb=99
-# -f is background, -N is do NOT execute remote command
-alias gopizza='ssh -L localhost:57131:192.168.1.131:22 -L localhost:57095:192.168.1.95:22 -L localhost:57045:192.168.1.45:22 -L localhost:57200:192.168.1.200:22 -L          localhost:57143:192.168.1.143:22 -L localhost:57124:192.168.1.124:22 -L localhost:57021:192.168.1.21:22 -L localhost:57147:192.168.1.147:22 -L localhost:57130:192.168.1.130:22 -L localhost:57099:192.168.1.99:22 picoral@picoral.dyns.cx'
 
 alias daemonlist='ps -lA | awk '"'"'$12 == "?" {print $4, $14} '"'"''
 export TERM=xterm-256color

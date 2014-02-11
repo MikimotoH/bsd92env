@@ -16,8 +16,8 @@ reviewboard = /root/hgreviewboard/
 server          = reviews.pi-coral.com
 
 # OPTIONAL ITEMS:
-user            = miki.liu
-password        = Pi-Coral@Taiwan2013
+user            = username
+password        = password
 # target_groups   = ... # default review groups
 # target_people   = ... # default review people
 

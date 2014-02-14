@@ -16,6 +16,7 @@ pkg update
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 pkg install -y wget
+pkg install -y ctags
 pkg install -y mercurial
 
 # python package manager

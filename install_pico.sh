@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh 
 #   https://wiki.freebsd.org/pkgng
+pkg install git
+pkg install mercurial
 rm /usr/local/etc/pkg.conf
 mkdir -p /usr/local/etc/pkg/repos
 cat << EOF >> /usr/local/etc/pkg/repos/FreeBSD.conf
@@ -9,6 +11,7 @@ FreeBSD: {
   enabled: yes
 }
 EOF
+unset PACKAGESITE
 pkg update
 
 
@@ -25,9 +28,9 @@ pkg install -y py27-pip
 # ag (faster than ack)
 pkg install -y the_silver_searcher
 
-
 cp ./rkj-repos.zsh-theme ~/.oh-my-zsh/themes
 
+mkdir -p ~/.oh-my-zsh/custom/plugins
 curl -L "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.zip" | unzip -d ~/.oh-my-zsh/custom/plugins -
 mv ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting-master ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
@@ -98,4 +101,4 @@ mkdir -p ~/.vim/bin && \
     cp ~/bsd92env/cc_args.py ~/.vim/bin
 
 
-(cd ~/bsd92env && rm root)
+# (cd ~/bsd92env && rm root)

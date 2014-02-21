@@ -4,7 +4,7 @@
 
 setenv PACKAGESITE http://freebsd.ntu.edu.tw/FreeBSD/ports/amd64/packages-9.2-release/Latest/
 export PACKAGESITE=http://freebsd.ntu.edu.tw/FreeBSD/ports/amd64/packages-9.2-release/Latest/
-[[ -d ~/.oh-my-zsh ]] || \
+[ -d ~/.oh-my-zsh ] || \
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 pkg_add -r vim
@@ -20,17 +20,12 @@ pkg_add -r ack
 
 cp ./rkj-repos.zsh-theme ~/.oh-my-zsh/themes
 
-if [ -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
-    echo "zsh-syntax-highlighting is already installed"
-else
-    echo "Install zsh-syntax-highlighting.git"
-    (mkdir -p ~/.oh-my-zsh/custom/plugins; cd ~/.oh-my-zsh/custom/plugins; \
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git; \
-        git clone https://github.com/zsh-users/zsh-history-substring-search )
-fi
+mkdir -p ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search.git ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 
-(cd ~ && hg clone https://bitbucket.org/sjl/hg-prompt )
-(cd ~ && hg clone https://bitbucket.org/sjl/mercurial-cli-templates)
+hg clone https://bitbucket.org/sjl/hg-prompt ~/hg-prompt
+hg clone https://bitbucket.org/sjl/mercurial-cli-templates ~/mercurial-cli-templates
 
 ln -sf `readlink -f .gitconfig` ~/
 ln -sf `readlink -f .vimrc` ~/
@@ -46,42 +41,22 @@ git config --global color.ui true
 
 # Install VIM pathogen -- bundle manager
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl 'www.vim.org/scripts/download_script.php?src_id=19375' \
-  > ~/.vim/autoload/pathogen.vim
+    curl 'www.vim.org/scripts/download_script.php?src_id=19375' > ~/.vim/autoload/pathogen.vim
 
 
-if [ -f ~/.vim/colors/wombat256.vim ] ; then
-    echo "wombat256.vim is already installed in vim/colors"
-else 
-    echo "Install wombat256 color for VIM"
-    mkdir -p ~/.vim/colors && curl \
-    'www.vim.org/scripts/download_script.php?src_id=13397' > ~/.vim/colors/wombat256.vim
-fi
+mkdir -p ~/.vim/colors && curl 'www.vim.org/scripts/download_script.php?src_id=13397' > ~/.vim/colors/wombat256.vim
 
-if [ -d ~/.vim/bundle/nerdtree ]; then
-    echo "NERDTree is already installed."
-else
-    echo "Install NERDTree "
-    (cd ~/.vim/bundle && \
-        git clone https://github.com/scrooloose/nerdtree.git)
-fi
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 
-if [ -d ~/.vim/bundle/tagbar ]; then
-    echo "Tagbar is already installed."
-else
-    echo "Install Tagbar "
-    (cd ~/.vim/bundle && \
-        git clone git://github.com/majutsushi/tagbar)
-fi
+git clone git://github.com/majutsushi/tagbar ~/.vim/bundle/tagbar
 
-# [[ -f ~/.vim/plugin/ack.vim ]] || curl -L "www.vim.org/scripts/download_script.php?src_id=10433" | tar zxvf - -C ~/.vim
 
 mkdir -p ~/.vim/plugin && \
     curl -L "www.vim.org/scripts/download_script.php?src_id=16171" > ~/.vim/plugin/DirDiff.vim
 
 # install Ag
-( git clone https://github.com/rking/ag.vim ~/.vim/bundle/ag &&\
-    vim ~/.vim/bundle/ag/doc -c "helptags ." -c "q")
+git clone https://github.com/rking/ag.vim ~/.vim/bundle/ag &&\
+    vim ~/.vim/bundle/ag/doc -c "helptags ." -c "q"
 echo "tags" >> ~/.agignore
 
 if [ -d ~/.vim/doc ] ; then
@@ -106,4 +81,5 @@ mkdir -p ~/.vim/bin && \
     cp ~/bsd92env/cc_args.py ~/.vim/bin
 
 
-(cd ~/bsd92env && rm root)
+rm -f ~/bsd92env/root
+

@@ -29,9 +29,9 @@ hg clone https://bitbucket.org/sjl/mercurial-cli-templates ~/mercurial-cli-templ
 
 ln -sf `readlink -f .gitconfig` ~/
 ln -sf `readlink -f .vimrc` ~/
-ln -sf `readlink -f .vim` ~/
 ln -sf `readlink -f .zshrc` ~/
 ln -sf `readlink -f .hgrc`  ~/
+mkdir -p ~/.vim
 
 # git config initialize 
 git config --global user.name MikimotoH

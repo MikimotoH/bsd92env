@@ -47,7 +47,6 @@ ZSH_THEME="rkj"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git mercurial zsh-syntax-highlighting)
 
-=======
 # Customize to your needs...
 export PATH='/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin'
 source $ZSH/oh-my-zsh.sh

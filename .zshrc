@@ -56,6 +56,9 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export EDITOR='vim'
+alias hgsg='hg sglog|head -50'
+alias hgsg='hg up'
+alias hgpu='hg pull --rebase'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
